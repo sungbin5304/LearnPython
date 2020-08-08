@@ -115,7 +115,6 @@ def getReply(msg, data):  # 답장할 말 가져오기
     result = []
     max = 0
     for n in range(len(data)):
-        global max, count
         count = checkWord(data[n], msg)
         if count > 0:
             if count > max:
@@ -124,3 +123,7 @@ def getReply(msg, data):  # 답장할 말 가져오기
             if count == max:
                 result.append(data[n])
     return result[random.randint(0, len(result - 1))]
+
+
+def response(msg):
+    learnData.append(msg)
